@@ -40,5 +40,9 @@ export class RegistrationcomponentComponent implements OnInit {
        let resp  = this.service.doStudentRegistration(this.student);
     resp.subscribe((data)=> this.message = data);
     }
+
+    login(){
+      window.open("http://localhost:8080","_self");
+    }
  
 }
