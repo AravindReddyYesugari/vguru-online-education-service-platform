@@ -5,3 +5,8 @@
 #home {
     color: white;
 }
+
+.md-card-image {
+    width: 100%;
+    height: 90%;
+}

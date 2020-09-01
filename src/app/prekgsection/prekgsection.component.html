@@ -1,0 +1,71 @@
+<mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+        <mat-icon aria-hidden="false" aria-label="Example home icon"> home
+        </mat-icon>
+        <span> <a mat-button routerLink="/">Home</a></span>
+
+        <button mat-button [matMenuTriggerFor]="menu">Subjects</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="alphabets1()">Alphabets</button>
+            <button mat-menu-item (click)="numbers1()">Numbers</button>
+            <button mat-menu-item (click)="stories1()">Stories</button>
+        </mat-menu>
+        <span class="spacer1"></span>
+        <button mat-raised-button (click)="riddles1()" color="primary">Puzzles and Riddles</button>
+        <span class="spacer"></span>
+        <a mat-button routerLink="/">Logout</a>
+    </mat-toolbar-row>
+
+</mat-toolbar>
+<div *ngIf="statement">
+    <h4>happy to see you here welcome...</h4>
+    <h3>choose the subjects which you want to learn ...enjoy</h3>
+
+
+</div>
+
+<div>
+    <mat-card>
+        <div *ngIf="alphabetsB" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <ng-container *ngFor="let ids of alphabets">
+                <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                    <video controls width="100%" height="100%">
+                        <source src="https://drive.google.com/uc?export=download&id={{ids}}" type='video/mp4'>
+                    </video>
+                </app-card>
+            </ng-container>
+        </div>
+
+
+        <div *ngIf="numbersB" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <ng-container *ngFor="let ids of numbers">
+                <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                    <video controls width="100%" height="100%">
+                        <source src="https://drive.google.com/uc?export=download&id={{ids}}" type='video/mp4'>
+                    </video>
+                </app-card>
+            </ng-container>
+        </div>
+
+        <div *ngIf="storiesB" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <ng-container *ngFor="let ids of stories">
+                <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                    <video controls width="100%" height="100%">
+                        <source src="https://drive.google.com/uc?export=download&id={{ids}}" type='video/mp4'>
+                    </video>
+                </app-card>
+            </ng-container>
+        </div>
+
+        <div *ngIf="riddlesB" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <ng-container *ngFor="let ids of riddles">
+                <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                    <video controls width="100%" height="100%">
+                           <source src="https://drive.google.com/uc?export=download&id={{ids}}" type='video/mp4'>
+                    </video>
+                </app-card>
+            </ng-container>
+        </div>
+    </mat-card>
+</div>

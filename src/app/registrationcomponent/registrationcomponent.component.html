@@ -1,0 +1,53 @@
+<mat-toolbar fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <span class="center1">Registration</span>
+</mat-toolbar>
+<div style="text-align: center;">
+    <h3>{{message}}</h3>
+
+</div>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card class="my-card">
+        <mat-card-content>
+            <form class="my-form">
+
+                <mat-form-field class="full-width">
+                    <mat-label for="firstName">First Name</mat-label>
+                    <input type="text" [(ngModel)]="student.firstName" matInput placeholder="first Name" name="firstName" id=firstName required>
+                    <mat-icon matSuffix> person_pin</mat-icon>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label for="lastName">Last Name</mat-label>
+                    <input type="text" [(ngModel)]="student.lastName" matInput placeholder="Last Name" name="lastName" id="lastName" required>
+                    <mat-icon matSuffix> person_pin</mat-icon>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label for="number">number</mat-label>
+                    <input type="text" [(ngModel)]="student.number" matInput placeholder="number" name="number" id="number" required>
+                    <mat-icon matSuffix> phone</mat-icon>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label for="email">Email</mat-label>
+                    <input type="email" [(ngModel)]="student.email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher" placeholder="Ex. pat@example.com" name="email" id="email">
+                    <mat-hint></mat-hint>
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                    <mat-icon matSuffix> email</mat-icon>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label for="password">Password</mat-label>
+                    <input type="password" [(ngModel)]="student.password" matInput placeholder="Password" name="password" id="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

@@ -1,0 +1,67 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+
+        <mat-icon aria-hidden="false" aria-label="Example home icon"> home
+        </mat-icon>
+        <span> <a mat-button routerLink="/">Home</a></span>
+
+        <button mat-button [matMenuTriggerFor]="menu">Subjects</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="maths1()">Maths</button>
+            <button mat-menu-item (click)="physics1()">Physics</button>
+            <button mat-menu-item (click)="chemistry1()">Chemistry</button>
+        </mat-menu>
+
+        <span class="spacer1"></span>
+        <button mat-raised-button (click)="puzzles1()" color="primary">puzzles and riddles</button>
+
+        <span class="spacer"></span>
+
+        <a mat-button routerLink="/login">Logout</a>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div>
+    <mat-card>
+        <div *ngIf="chemistryB" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <ng-container *ngFor="let ids of chemistry">
+                <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                    <video controls width="100%" height="100%">
+                        <source src="https://drive.google.com/uc?export=download&id={{ids}}" type='video/mp4'>
+                    </video>
+                </app-card>
+            </ng-container>
+        </div>
+
+
+        <div *ngIf="mathsB" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <ng-container *ngFor="let ids of maths">
+                <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                    <video controls width="100%" height="100%">
+                        <source src="https://drive.google.com/uc?export=download&id={{ids}}" type='video/mp4'>
+                    </video>
+                </app-card>
+            </ng-container>
+        </div>
+
+        <div *ngIf="physicsB" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <ng-container *ngFor="let ids of physics">
+                <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                    <video controls width="100%" height="100%">
+                        <source src="https://drive.google.com/uc?export=download&id={{ids}}" type='video/mp4'>
+                    </video>
+                </app-card>
+            </ng-container>
+        </div>
+
+        <div *ngIf="puzzlesB" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+            <ng-container *ngFor="let ids of puzzles">
+                <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+                    <video controls width="100%" height="100%">
+                           <source src="https://drive.google.com/uc?export=download&id={{ids}}" type='video/mp4'>
+                    </video>
+                </app-card>
+            </ng-container>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,16 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.spacer1 {
+    flex: 1 auto;
+}
+
+#home {
+    color: white;
+}
+
+li {
+    display: inline-flex;
+    list-style: none;
+}

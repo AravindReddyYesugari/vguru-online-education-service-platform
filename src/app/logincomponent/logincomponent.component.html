@@ -1,0 +1,25 @@
+<mat-toolbar fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <span>LOGIN</span>
+</mat-toolbar>
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card class="my-card">
+        <mat-card-content class="loginForm">
+            <form class="my-form" action="login" method="POST">
+                <mat-form-field class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input type="text" [(ngModel)]="username" matInput placeholder="Email" name="username" id="user">
+                    <mat-icon matSuffix> email</mat-icon>
+
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="text" [(ngModel)]="password" matInput placeholder="Password" name="password" id="password">
+                    <mat-icon matSuffix> vpn_key</mat-icon>
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button (click)="doLogin1()" color="primary" type="submit" name="login">LOGIN</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
