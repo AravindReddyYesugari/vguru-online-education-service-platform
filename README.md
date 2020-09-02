@@ -1,5 +1,6 @@
 # Vguruonlineeducation
 
+DOWNLOAD ONLY VirtusaOnlineEducationServicePlatform  dont download VirtusaVguruOnlineEducationService
 
 1>create a schema and name it as studentdatabase1t
 
